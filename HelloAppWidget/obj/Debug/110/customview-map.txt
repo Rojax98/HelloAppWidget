@@ -1,0 +1,9 @@
+appwidget-provider;obj\Debug\110\res\xml\appwidgetprovider.xml
+Button;obj\Debug\110\res\layout\main.xml
+ImageView;obj\Debug\110\res\layout\widget.xml
+LinearLayout;obj\Debug\110\res\layout\main.xml
+LinearLayout;obj\Debug\110\res\layout\widget.xml
+RelativeLayout;obj\Debug\110\res\layout\widget.xml
+resources;obj\Debug\110\res\values\strings.xml
+string;obj\Debug\110\res\values\strings.xml
+TextView;obj\Debug\110\res\layout\widget.xml

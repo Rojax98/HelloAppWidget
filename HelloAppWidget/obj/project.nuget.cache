@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cYpuy1uVUhYtXklFis81LyaKx+cxA+77uIYEAjE0QtSgKeT1SdIdmldTf29rnzcjvx+3AW7kfd/gQU4BD1IIbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Marmi\\Documents\\GitHub\\HelloAppWidget\\HelloAppWidget\\HelloAppWidget.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Marmi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

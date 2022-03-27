@@ -1,0 +1,6 @@
+HelloAppWidget.MainActivity, HelloAppWidget;crc64f9895c937e2d50d0.MainActivity
+HelloAppWidget.MainActivity;crc64f9895c937e2d50d0.MainActivity
+helloappwidget.MainActivity;crc64f9895c937e2d50d0.MainActivity
+HelloAppWidget.AppWidget, HelloAppWidget;crc64f9895c937e2d50d0.AppWidget
+HelloAppWidget.AppWidget;crc64f9895c937e2d50d0.AppWidget
+helloappwidget.AppWidget;crc64f9895c937e2d50d0.AppWidget

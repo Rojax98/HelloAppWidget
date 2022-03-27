@@ -1,0 +1,50 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Marmi\\Documents\\GitHub\\HelloAppWidget\\HelloAppWidget\\HelloAppWidget.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Marmi\\Documents\\GitHub\\HelloAppWidget\\HelloAppWidget\\HelloAppWidget.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Marmi\\Documents\\GitHub\\HelloAppWidget\\HelloAppWidget\\HelloAppWidget.csproj",
+        "projectName": "HelloAppWidget",
+        "projectPath": "C:\\Users\\Marmi\\Documents\\GitHub\\HelloAppWidget\\HelloAppWidget\\HelloAppWidget.csproj",
+        "packagesPath": "C:\\Users\\Marmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Marmi\\Documents\\GitHub\\HelloAppWidget\\HelloAppWidget\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Marmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "monoandroid12.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "monoandroid12.0": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "monoandroid12.0": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          }
+        }
+      }
+    }
+  }
+}

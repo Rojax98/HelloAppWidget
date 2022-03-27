@@ -5,11 +5,13 @@ using Android.Appwidget;
 using Android.Content;
 using Android.Util;
 using Android.Widget;
+using APIManager;
 
 namespace HelloAppWidget
 {
-	[BroadcastReceiver(Label = "HellApp Widget")]
+	[BroadcastReceiver(Label = "HellApp Widget", Exported = true)]
 	[IntentFilter(new string[] { "android.appwidget.action.APPWIDGET_UPDATE" })]
+
 	// The "Resource" file has to be all in lower caps
 	[MetaData("android.appwidget.provider", Resource = "@xml/appwidgetprovider")]
 	public class AppWidget : AppWidgetProvider
@@ -24,6 +26,10 @@ namespace HelloAppWidget
 		{
 			var me = new ComponentName(context, Java.Lang.Class.FromType(typeof(AppWidget)).Name);
 			appWidgetManager.UpdateAppWidget(me, BuildRemoteViews(context, appWidgetIds));
+
+			F1API.GetNextSchedule();
+
+			Console.Write("updated widget");
 		}
 
 		private RemoteViews BuildRemoteViews(Context context, int[] appWidgetIds)
@@ -39,8 +45,11 @@ namespace HelloAppWidget
 
 		private void SetTextViewText(RemoteViews widgetView)
 		{
-			widgetView.SetTextViewText(Resource.Id.widgetMedium, "HelloAppWidget");
-			widgetView.SetTextViewText(Resource.Id.widgetSmall, string.Format("Last update: {0:H:mm:ss}", DateTime.Now));
+			widgetView.SetTextViewText(Resource.Id.widgetMedium, "F1 Widget");
+
+			var nextRace = F1API.GetNextRace();
+
+			widgetView.SetTextViewText(Resource.Id.widgetSmall, string.Format("Next Race: " + nextRace.raceName + " " + nextRace.dateTime.ToLocalTime()));
 		}
 
 		private void RegisterClicks(Context context, int[] appWidgetIds, RemoteViews widgetView)
@@ -50,7 +59,7 @@ namespace HelloAppWidget
 			intent.PutExtra(AppWidgetManager.ExtraAppwidgetIds, appWidgetIds);
 
 			// Register click event for the Background
-			var piBackground = PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.UpdateCurrent);
+			var piBackground = PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.Immutable);
 			widgetView.SetOnClickPendingIntent(Resource.Id.widgetBackground, piBackground);
 
 			// Register click event for the Announcement-icon
@@ -61,7 +70,7 @@ namespace HelloAppWidget
 		{
 			var intent = new Intent(context, typeof(AppWidget));
 			intent.SetAction(action);
-			return PendingIntent.GetBroadcast(context, 0, intent, 0);
+			return PendingIntent.GetBroadcast(context, 0, intent, PendingIntentFlags.Immutable);
 		}
 
 		/// <summary>
@@ -81,8 +90,9 @@ namespace HelloAppWidget
 					var launchIntent = pm.GetLaunchIntentForPackage(packageName);
 					context.StartActivity(launchIntent);
 				}
-				catch
+				catch(Exception e)
 				{
+					Console.WriteLine(e.Message);
 					// Something went wrong :)
 				}
 			}
